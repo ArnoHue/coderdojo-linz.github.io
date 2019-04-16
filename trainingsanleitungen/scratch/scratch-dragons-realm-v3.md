@@ -16,59 +16,34 @@ scratch-data: 11
 ![Endgame](scratch-dragons-realm-v3/endgame.png)
 
 Bei Dragons Realm steuerst du einen Drachen, der sein Territorium gegen eindringende Raubritter verteidigt.
-Mit den Pfeiltasten lenkst du den Drachen (du kannst auch zwei Tasten gleichzeitig drücken mit ↑ und → fliegt man zum Beispiel nach rechts oben). Mit der Leertaste spuckt der Drache Feuer, und kann Ritter zu Stein erstarren lassen.
+Mit den Pfeiltasten lenkst du den Drachen um den Pfeilen der Ritter ausweichen zu können (du kannst auch zwei Tasten gleichzeitig drücken; mit ↑ und → fliegt man zum Beispiel nach rechts oben). Mit der Leertaste spuckt der Drache Feuer, und kann Ritter zu Stein erstarren lassen.
 Damit das Spiel auch auf Tablets und Handys funktioniert, wurde nachträglich eine Maus/Touch-Steuerung eingebaut. Generell ist das Spielerlebnis mit der Tastatur aber besser.
 
-Dragons Realm beinhaltet viele Grafiken. Du bekommst die Grafiken auf Anfrage von deinen Mentoren, oder kannst sie gesammelt hier herunterladen: [scratch-dragons-realm-v3/dragons.zip](scratch-dragons-realm-v3/dragons.zip)
-
-Das Spiel besteht aus 6 Figuren und 19 Codeblöcken.
+Dragons Realm beinhaltet viele Grafiken. Du kannst die vorgefertigten Figuren mit allen Kostümen (bar ohne Skripte) hier herunterladen:
 
 ## Downloads
 
-[Background](scratch-dragons-realm-v3/Background.sprite2)
+[Background](scratch-dragons-realm-v3/Background.sprite3)
 
-[Border](scratch-dragons-realm-v3/Border.sprite2)
+[Dragon](scratch-dragons-realm-v3/Dragon.sprite3)
 
-[Dragon](scratch-dragons-realm-v3/Dragon.sprite2)
+[Fireball](scratch-dragons-realm-v3/Fireball.sprite3)
 
-[Fireball](scratch-dragons-realm-v3/Fireball.sprite2)
+[Tiles](scratch-dragons-realm-v3/Tiles.sprite3)
 
-[Tiles](scratch-dragons-realm-v3/Tiles.sprite2)
+[Knight](scratch-dragons-realm-v3/Knight.sprite3)
 
-[Knight](scratch-dragons-realm-v3/Knight.sprite2)
+[Spear](scratch-dragons-realm-v3/Spear.sprite3)
 
 ## Die Figuren
 
-Wir brauchen insgesamt sechs Figuren: Background, Border, Dragon, Fireball, Tiles und Knight:
+Nun da du die Figuren heruntergeladen hast, können wie sie in dein neuen Projekt importieren. Lege dazu ein neues Scratch Projekt an. Bewege dann die Maus im Figuren-Panel über das "Figur wählen" Symbol. Ein blaues Menü erscheint. Klicke dort "Figur hochladen", und wähle "Dragon.sprite3" aus dem lokalen Dateisystemen aus. Wiederhole diesen Schritt für alle Figuren.
 
-![Figur löschen](scratch-dragons-realm-v3/figuren.png)
-
-Die Kostüme findest du unter den Grafikdateien, die du von deinen Mentoren erhalten oder heruntergeladen hast, und zwar in den jeweiligen Unterverzeichnissen mit identem Namen. Also Verzeichnis *dragon* für den Drachen, usw.
-
-Das Anlegen der Figuren geschieht immer gleich: Klick auf *Figur wählen* / *Malen*. Im *Kostüme* Karteireiter wählst du dann *Kostüme hochladen*. Als nächstes selektierst du gleich alle Grafiken des entsprechenden Unterverzeichnisses aus, damit geht das Laden schneller. Das geht im Windows Dateidialog so:
-
-![Selektieren](scratch-dragons-realm-v3/alles-selektiert.png)
-
-## Die Figur Dragon
-
-Etwas speziell ist es beim Drachen, der aus insgesamt 64 Kostümen besteht, die noch dazu in der richtigen Reihenfolge im Scratch Editor vorliegen müssen, das heißt zu Beginn Dragon01, dann Dragon02, Dragon03 und so weiter.
-
-Man kann zwar alle Kostüme auf einmal laden, aber Scratch verändert dabei deren Reihenfolge. 64 Kostüme händisch wieder in die richtige Reihenfolge zu bringen, ist viel Arbeit.
-Unser Tipp daher: Lade immer acht aufeinanderfolgende Kostüme auf einmal, also erstmal Dragon01 bis Dragon08:
-
-![Figur löschen](scratch-dragons-realm-v3/alles-nicht-selektiert.png)
-
-Daraufhin kannst du diese 8 Drachen mittels Ziehen der Maus sortieren, sodass die Kostüm-Liste so aussieht:
-
-![Figur löschen](scratch-dragons-realm-v3/drache.png)
-
-Also nächstes machst du das gleiche mit Dragon09 bis Dragon 16, und so weiter.
-
-Bei den Drachenkostümen ist auch zu beachten, dass deren Drehpunkt immer an der gleichen Stelle ist, und zwar beim Kopf. Dadurch wird sichergestellt, dass die Flugbewegung gleichmäßig abläuft, und dass die Feuerbälle aus seinem Maul kommen.
+![SpriteUpload](scratch-dragons-realm-v3/sprite-upload.png)
 
 ## Die Codeblöcke
 
-Beginnen wir mit der Liste von Variablen, die angelegt werden müssen.
+Beginnen wir mit den Variablen, die wir global bzw. je Figur anlegen müssen. 
 Bitte achte genau darauf, dass du die richtige Auswahl zwischen *Für alle Figuren* und *Nur für diese Figur* triffst:
 
 |Variable|Figur|
@@ -80,19 +55,36 @@ Bitte achte genau darauf, dass du die richtige Auswahl zwischen *Für alle Figur
 |FirstSprite|Dragon|
 |FireBallDirX|Fireball|
 |FireBallDirY|Fireball|
+|IsClone|Fireball|
+|IsClone|Tiles|
+|DeltaRandX|Tiles|
+|DeltaRandY|Tiles|
 |Frozen|Knight|
 |KnightX|Knight|
 |KnightY|Knight|
+|IsClone|Spear|
+|ShootSpearStepCount|Spear|
 |DirectionX|Für alle Figuren|
 |DirectionY|Für alle Figuren|
+|GameOver|Für alle Figuren|
+|Lives|Für alle Figuren|
+|LiveLbl|Für alle Figuren|
 |PrevDirectionX|Für alle Figuren|
 |PrevDirectionY|Für alle Figuren|
 |Score|Für alle Figuren|
+|ScoreLbl|Für alle Figuren|
+|ScrollDirectionX|Für alle Figuren|
+|ScrollDirectionY|Für alle Figuren|
 |ShootActive|Für alle Figuren|
+|ShootSpearActive|Für alle Figuren|
+|ShootSpearDirX|Für alle Figuren|
+|ShootSpearDirY|Für alle Figuren|
+|ShootSpearX|Für alle Figuren|
+|ShootSpearY|Für alle Figuren|
 
-Für die Figur des Drachen sollten die Variablen danach so aussehen:
+Für die Figur des Drachen sollten die Variablen (lokal und global) danach so aussehen:
 
-![Figur löschen](scratch-dragons-realm-v3/daten.png)
+![DragonVars](scratch-dragons-realm-v3/dragon-vars.png)
 
 ## Code der Figur Dragon
 
@@ -102,11 +94,11 @@ Das nennt man eine Animation.
 In dem *StartAnimation* Codeblock werden laufend Kostüme ausgetauscht, um für die Flügelbewegung zu sorgen.
 Im Skript *StartControl* ist die Tastatur- und Maus-Steuerung des Drachen implementiert.
 
-![Figur löschen](scratch-dragons-realm-v3/code-drache-1.png)
+![DragonCode1](scratch-dragons-realm-v3/code-drache-1.png)
 
-![Figur löschen](scratch-dragons-realm-v3/code-drache-2.png)
+![DragonCode2](scratch-dragons-realm-v3/code-drache-2.png)
 
-![Figur löschen](scratch-dragons-realm-v3/code-drache-3.png)
+![DragonCode3](scratch-dragons-realm-v3/code-drache-3.png)
 
 Der Drache sollte sich jetzt eigentlich schon steuern lassen und mit den Flügeln flattern. Probiere es einmal aus!
   
