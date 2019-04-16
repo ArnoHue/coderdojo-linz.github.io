@@ -23,17 +23,17 @@ Dragons Realm beinhaltet viele Grafiken. Du kannst die vorgefertigten Figuren mi
 
 ## Downloads
 
-[Background](scratch-dragons-realm-v3/Background.sprite3)
+[Background.sprite3](scratch-dragons-realm-v3/Background.sprite3)
 
-[Dragon](scratch-dragons-realm-v3/Dragon.sprite3)
+[Dragon.sprite3](scratch-dragons-realm-v3/Dragon.sprite3)
 
-[Fireball](scratch-dragons-realm-v3/Fireball.sprite3)
+[Fireball.sprite3](scratch-dragons-realm-v3/Fireball.sprite3)
 
-[Tiles](scratch-dragons-realm-v3/Tiles.sprite3)
+[Tiles.sprite3](scratch-dragons-realm-v3/Tiles.sprite3)
 
-[Knight](scratch-dragons-realm-v3/Knight.sprite3)
+[Knight.sprite3](scratch-dragons-realm-v3/Knight.sprite3)
 
-[Spear](scratch-dragons-realm-v3/Spear.sprite3)
+[Spear.sprite3](scratch-dragons-realm-v3/Spear.sprite3)
 
 [Medieval.wav](scratch-dragons-realm-v3/Medieval.wav)
 
@@ -133,6 +133,10 @@ Dabei ist die Reihenfolge der Klone wichtig, damit weiter vorne liegende Objekt 
 Ähnlich wie das Gras müssen auch Bäume und Felsen unter dem Drachen durchscrollen.
 
 ![TilesCode](scratch-dragons-realm-v3/tiles-code.png)
+
+## Code der Figur Spear
+
+![TilesCode](scratch-dragons-realm-v3/spear-code.png)
 
 ## Code der Figur Knight
 
